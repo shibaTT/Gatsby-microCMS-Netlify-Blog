@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import moment from "moment"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -10,7 +11,9 @@ const IndexPage = ({ data }) => (
     <ul>
       {data.allMicrocmsBlogs.edges.map(({ node }) => (
         <li key={node.blogId}>
-          <Link to={`/blog/${node.blogsId}`}>{node.title}</Link>
+          <Link to={`/blog/${node.blogsId}`}>
+            {node.title} - {moment(node.createdAt).format("YYYY年MM月DD日")}
+          </Link>
         </li>
       ))}
     </ul>
@@ -27,11 +30,12 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allMicrocmsBlogs {
+    allMicrocmsBlogs(sort: { fields: [createdAt], order: DESC }) {
       edges {
         node {
           blogsId
           title
+          createdAt
         }
       }
     }
