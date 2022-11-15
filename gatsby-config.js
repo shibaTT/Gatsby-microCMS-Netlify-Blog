@@ -12,7 +12,7 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: "はじめてのJamstack",
+    title: "To The First",
     description:
       "初めてのJamstackのブログを作ってみたので、その過程や躓いたところとか、あとは普通に健忘録的なものとか、日常とか、なんかよくわかんないけど適当に置いておこうかなって感じですね",
     author: "@tori",
@@ -29,6 +29,12 @@ module.exports = {
             endpoint: "blogs",
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        outputStyle: "expanded",
       },
     },
   ],
