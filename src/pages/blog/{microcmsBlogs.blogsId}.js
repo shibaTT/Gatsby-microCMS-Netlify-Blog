@@ -1,22 +1,27 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 
-const blogPage = ({ data }) => (
+const BlogPage = ({ data }) => (
   <Layout>
     <Seo title={data.microcmsBlogs.title} />
-    <h1>{data.microcmsBlogs.title}</h1>
-    <div
-      dangerouslySetInnerHTML={{
-        __html: `${data.microcmsBlogs.content}`,
-      }}
-    />
+    <div class="c-post">
+      <h1 class="c-post__title">{data.microcmsBlogs.title}</h1>
+      <Link to={`/category/${data.microcmsBlogs.category.id}`}>
+        <div class="c-post__category">{data.microcmsBlogs.category.name}</div>
+      </Link>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `${data.microcmsBlogs.content}`,
+        }}
+      />
+    </div>
   </Layout>
 )
 
-export default blogPage
+export default BlogPage
 
 export const query = graphql`
   query ($id: String!) {
@@ -24,6 +29,10 @@ export const query = graphql`
       blogsId
       title
       content
+      category {
+        name
+        id
+      }
     }
   }
 `

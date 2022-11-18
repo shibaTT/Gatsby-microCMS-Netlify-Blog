@@ -12,7 +12,8 @@ const IndexPage = ({ data }) => (
       {data.allMicrocmsBlogs.edges.map(({ node }) => (
         <li key={node.blogId}>
           <Link to={`/blog/${node.blogsId}`}>
-            {node.title} - {moment(node.createdAt).format("YYYY年MM月DD日")}
+            【{node.category.name}】{node.title} -{" "}
+            {moment(node.createdAt).format("YYYY年MM月DD日")}
           </Link>
         </li>
       ))}
@@ -36,6 +37,9 @@ export const query = graphql`
           blogsId
           title
           createdAt
+          category {
+            name
+          }
         }
       }
     }

@@ -28,6 +28,9 @@ module.exports = {
           {
             endpoint: "blogs",
           },
+          {
+            endpoint: "categories",
+          },
         ],
       },
     },
