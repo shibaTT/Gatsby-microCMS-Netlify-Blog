@@ -6,7 +6,7 @@ import Seo from "../components/seo"
 import moment from "moment"
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <Layout currentPage="home">
     <Seo title="Home"></Seo>
     <ul>
       {data.allMicrocmsBlogs.edges.map(({ node }) => (

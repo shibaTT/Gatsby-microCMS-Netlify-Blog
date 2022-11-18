@@ -6,7 +6,7 @@ import Seo from "../../components/seo"
 import moment from "moment"
 
 const CategoryPage = ({ data }) => (
-  <Layout>
+  <Layout currentPage={data.microcmsCategories.categoriesId}>
     <Seo title="Home"></Seo>
     <ul>
       {data.allMicrocmsBlogs.edges.map(({ node }) => (
@@ -36,7 +36,7 @@ export const query = graphql`
         }
       }
     }
-    microcmsCategories {
+    microcmsCategories(categoriesId: { eq: $categoriesId }) {
       categoriesId
     }
   }
