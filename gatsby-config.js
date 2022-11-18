@@ -33,9 +33,6 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-sass",
-      options: {
-        outputStyle: "expanded",
-      },
     },
   ],
 }
