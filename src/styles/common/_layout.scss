@@ -1,0 +1,23 @@
+.l-mother {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.l-header {
+    position: relative;
+    width: 280px;
+    margin-top: calc(50vh - 64px);
+}
+
+.l-main {
+    width: 70%;
+    max-width: 740px;
+}
+
+.l-footer {
+    padding: 40px 0;
+}

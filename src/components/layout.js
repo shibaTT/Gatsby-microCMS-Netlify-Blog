@@ -24,19 +24,16 @@ const Layout = ({ children, currentPage = "" }) => {
 
   return (
     <>
-      <Header
-        siteTitle={data.site.siteMetadata?.title || `Title`}
-        currentPage={currentPage}
-      />
-      {console.log(currentPage)}
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
+      <div class="c-mother l-mother">
+        <Header
+          siteTitle={data.site.siteMetadata?.title || `Title`}
+          currentPage={currentPage}
+        />
+        <main
+          className={`c-main l-main ${currentPage === "blog" ? "is-blog" : ""}`}
+        >
+          {children}
+        </main>
       </div>
       <footer
         style={{
@@ -44,10 +41,9 @@ const Layout = ({ children, currentPage = "" }) => {
           fontSize: `var(--font-sm)`,
           textAlign: `center`,
         }}
+        className="l-footer c-footer"
       >
-        © {new Date().getFullYear()} &middot; Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        © {new Date().getFullYear()} - Built with Love.
       </footer>
     </>
   )
