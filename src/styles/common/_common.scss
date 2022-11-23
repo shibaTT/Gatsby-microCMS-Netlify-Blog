@@ -7,6 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: "Helvetica Neue", Arial, "A1ゴシック M",
     "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  margin: 0;
 }
 
 .c-header__contents {
@@ -41,4 +42,62 @@ body {
     box-shadow: 0 6px 16px 0 rgb(0 0 0 / 5%);
     background-color: var.$white;
   }
+}
+
+.c-post {
+  &__contents {
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+    }
+  }
+}
+
+/* commons */
+* {
+  box-sizing: inherit;
+}
+
+*:before {
+  box-sizing: inherit;
+}
+
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  background-color: transparent;
+  color: var.$textmain;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+  text-decoration: none;
+}
+
+img {
+  border-style: none;
+  max-width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+hr {
+  box-sizing: content-box;
+  overflow: visible;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding: 0;
+  margin-bottom: 4px;
+  background: hsla(0, 0%, 0%, 0.2);
+  border: none;
+  height: 1px;
 }
