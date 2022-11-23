@@ -9,7 +9,7 @@ import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+//import "./layout.css"
 
 const Layout = ({ children, currentPage = "" }) => {
   const data = useStaticQuery(graphql`
@@ -45,6 +45,11 @@ const Layout = ({ children, currentPage = "" }) => {
       >
         © {new Date().getFullYear()} - Built with Love.
       </footer>
+      <script
+        type="text/javascript"
+        src="//typesquare.com/3/tsst/script/ja/typesquare.js?rCoKPc7o4Sk%3D"
+        charset="utf-8"
+      ></script>
     </>
   )
 }

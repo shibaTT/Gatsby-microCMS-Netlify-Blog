@@ -1,3 +1,5 @@
+@use "../foundation/variables" as var;
+
 .u-pt1 {
   padding-top: 4px;
 }
@@ -252,4 +254,16 @@
 
 .u-mr8 {
   margin-right: 32px;
+}
+
+.u-pc {
+  @include var.mq(tb) {
+    display: none;
+  }
+}
+
+.u-sp {
+  @include var.mq(pc) {
+    display: none;
+  }
 }
