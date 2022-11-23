@@ -8,6 +8,7 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import Head from "./head"
 import Header from "./header"
 //import "./layout.css"
 
@@ -24,7 +25,8 @@ const Layout = ({ children, currentPage = "" }) => {
 
   return (
     <>
-      <div class="c-mother l-mother">
+      <Head />
+      <div className="c-mother l-mother">
         <Header
           siteTitle={data.site.siteMetadata?.title || `Title`}
           currentPage={currentPage}
@@ -45,11 +47,6 @@ const Layout = ({ children, currentPage = "" }) => {
       >
         © {new Date().getFullYear()} - Built with Love.
       </footer>
-      <script
-        type="text/javascript"
-        src="//typesquare.com/3/tsst/script/ja/typesquare.js?rCoKPc7o4Sk%3D"
-        charset="utf-8"
-      ></script>
     </>
   )
 }

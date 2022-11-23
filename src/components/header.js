@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 import TableOfContents from "./toc"
 
 const Header = ({ siteTitle, currentPage, blogInfo }) => (
-  <header class="c-header l-header">
-    <div class="c-header__contents">
-      <div class="c-header__navigation">
+  <header className="c-header l-header">
+    <div className="c-header__contents">
+      <div className="c-header__navigation">
         <div className="c-header__logo">{siteTitle}</div>
         <Link
           to="/"

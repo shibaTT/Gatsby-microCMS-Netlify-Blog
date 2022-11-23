@@ -37,5 +37,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sass",
     },
+    {
+      resolve: "gatsby-plugin-react-helmet",
+    },
   ],
 }
