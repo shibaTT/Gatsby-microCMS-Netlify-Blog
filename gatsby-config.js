@@ -11,6 +11,9 @@
 require("dotenv").config()
 
 module.exports = {
+  flags: {
+    DEV_SSR: true, // フォント読み込もうとしたらエラー出るので
+  },
   siteMetadata: {
     title: "To The First",
     description:
@@ -34,11 +37,16 @@ module.exports = {
         ],
       },
     },
+    "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
-      resolve: "gatsby-plugin-sass",
-    },
-    {
-      resolve: "gatsby-plugin-react-helmet",
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/images`,
+        name: "images",
+      },
     },
   ],
 }

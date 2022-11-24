@@ -5,6 +5,13 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
+/*
+ *
+ * 画像の読み込み方
+ *
+ * See: https://reffect.co.jp/react/gatsby-image-understand-for-beginner#Gatsby-image
+ */
+
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 

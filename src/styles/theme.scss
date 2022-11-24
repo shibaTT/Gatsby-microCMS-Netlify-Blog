@@ -7,3 +7,13 @@
 
 // utility
 @use "utility/utility";
+
+// font-face
+@font-face {
+  font-family: "mamelon";
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url(/fonts/mamelon.woff2) format("woff2");
+}
