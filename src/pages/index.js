@@ -8,12 +8,25 @@ import moment from "moment"
 const IndexPage = ({ data }) => (
   <Layout currentPage="home">
     <Seo title="Home"></Seo>
-    <ul>
+    <ul className="c-main__list">
       {data.allMicrocmsBlogs.edges.map(({ node }) => (
-        <li key={node.blogId}>
-          <Link to={`/blog/${node.blogsId}`}>
-            【{node.category.name}】{node.title} -{" "}
-            {moment(node.createdAt).format("YYYY年MM月DD日")}
+        <li key={node.blogsId} className="c-main__listItem">
+          <Link
+            to={`/blog/${node.blogsId}`}
+            className="c-main__listItemWrapper"
+          >
+            <div
+              className={`c-main__listItemCategory is-${node.category.name}`}
+            >
+              {node.category.name}
+            </div>
+            <div className="c-main__listItemImage"></div>
+            <div className="c-main__listItemTitle">
+              {node.title}
+              <span class="c-main__listItemDate">
+                {moment(node.createdAt).format("YYYY年MM月DD日")}
+              </span>
+            </div>
           </Link>
         </li>
       ))}

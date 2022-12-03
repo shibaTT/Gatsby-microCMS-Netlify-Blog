@@ -8,6 +8,8 @@ body {
   font-family: "Helvetica Neue", Arial, "A1ゴシック M",
     "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   margin: 0;
+  line-height: 1.5;
+  overflow: scroll;
 }
 
 .c-header__contents {
@@ -34,13 +36,73 @@ body {
 }
 
 .c-main {
-  padding: 80px 0;
+  padding: 0 0 80px 0;
+
   &.is-blog {
     z-index: 2;
     padding: 0 5% 40px;
     border-radius: 0 0 50px 50px;
     box-shadow: 0 6px 16px 0 rgb(0 0 0 / 5%);
     background-color: var.$white;
+  }
+
+  &__list {
+    padding-top: 80px;
+  }
+
+  &__listItem {
+    position: relative;
+    display: block;
+    height: 200px;
+
+    & + & {
+      margin-top: 60px;
+    }
+
+    &Wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      background-color: var.$white;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    &Category {
+      position: absolute;
+      overflow: visible;
+      top: 0;
+      left: 40%;
+      padding: 4px 32px;
+      background-color: var.$white;
+      border-radius: 300px;
+      transform: translate(-50%, -50%);
+
+      &.is-Design {
+        color: var.$white;
+        background-color: var.$design;
+      }
+    }
+
+    &Image {
+      width: 267px;
+      height: 200px;
+      flex-shrink: 0;
+      background-color: var.$bgsub;
+    }
+
+    &Title {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      font-size: 20px;
+    }
+
+    &Date {
+      display: block;
+      font-size: 14px;
+    }
   }
 }
 
@@ -56,15 +118,15 @@ body {
 
 /* commons */
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 *:before {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 a {
@@ -83,6 +145,10 @@ a:hover {
 img {
   border-style: none;
   max-width: 100%;
+}
+
+ul {
+  margin: 0;
 }
 
 li {
