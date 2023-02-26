@@ -23,7 +23,7 @@ const CategoryPage = ({ data }) => (
             <div className="c-main__listItemImage"></div>
             <div className="c-main__listItemTitle">
               {node.title}
-              <span class="c-main__listItemDate">
+              <span className="c-main__listItemDate">
                 {moment(node.createdAt).format("YYYY年MM月DD日")}
               </span>
             </div>

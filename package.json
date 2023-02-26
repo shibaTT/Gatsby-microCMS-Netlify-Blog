@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fontsource/m-plus-1p": "^4.5.10",
     "gatsby": "^5.0.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^3.0.0",
@@ -21,7 +22,8 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "yarn": "^1.22.19"
   },
   "keywords": [
     "gatsby"

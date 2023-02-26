@@ -7,7 +7,12 @@ import Seo from "../../components/seo"
 const BlogPage = ({ data }) => (
   <Layout currentPage="blog">
     <Seo title={data.microcmsBlogs.title} />
-    <div className="c-post">
+    <article className="c-post">
+      <div className="c-post__eyeCatch">
+        <p className="c-post__eyeCatchCategory">
+          {data.microcmsBlogs.category.name}
+        </p>
+      </div>
       <h1 className="c-post__title">{data.microcmsBlogs.title}</h1>
       <div className="c-post__category">
         <Link to={`/category/${data.microcmsBlogs.category.id}`}>
@@ -20,7 +25,7 @@ const BlogPage = ({ data }) => (
           __html: `${data.microcmsBlogs.content}`,
         }}
       />
-    </div>
+    </article>
   </Layout>
 )
 

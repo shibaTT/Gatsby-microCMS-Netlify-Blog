@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => (
             <div className="c-main__listItemImage"></div>
             <div className="c-main__listItemTitle">
               {node.title}
-              <span class="c-main__listItemDate">
+              <span className="c-main__listItemDate">
                 {moment(node.createdAt).format("YYYY年MM月DD日")}
               </span>
             </div>
@@ -44,7 +44,7 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allMicrocmsBlogs(sort: { fields: [createdAt], order: DESC }) {
+    allMicrocmsBlogs(sort: { createdAt: DESC }) {
       edges {
         node {
           blogsId

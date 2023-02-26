@@ -17,6 +17,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Head from "./head"
 import Header from "./header"
+import "@fontsource/m-plus-1p/400.css"
+import "@fontsource/m-plus-1p/800.css"
 //import "./layout.css"
 
 const Layout = ({ children, currentPage = "" }) => {
