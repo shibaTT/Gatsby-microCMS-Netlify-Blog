@@ -12,11 +12,37 @@ body {
   overflow: scroll;
 }
 
+.c-header {
+  @include var.mq(sp) {
+    overflow: hidden;
+    background-color: var.$bgsub2;
+    border-radius: 0 0 0 100px;
+    z-index: 9999;
+  }
+}
+
+.c-header__hamburger {
+  content: url("/icon/icon-hamburger.svg");
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%, -80%);
+}
+
+.c-header__logo {
+  font-size: 2vw;
+  font-weight: bold;
+}
+
 .c-header__contents {
   display: flex;
   flex-direction: column;
   position: sticky;
   top: 20px;
+
+  @include var.mq(sp) {
+    display: none;
+  }
 }
 
 .c-header__navigation {
@@ -33,6 +59,23 @@ body {
   padding: 20px 28px;
   border-radius: 50px 0 0 50px;
   background-color: var.$white;
+  overflow-y: scroll;
+
+  @include var.mq(sp) {
+    display: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var.$textmain;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
 
 .c-main {
@@ -59,31 +102,6 @@ body {
       margin-top: 60px;
     }
 
-    &Wrapper {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-      background-color: var.$white;
-      border-radius: 50px;
-      overflow: hidden;
-    }
-
-    &Category {
-      position: absolute;
-      overflow: visible;
-      top: 0;
-      left: 40%;
-      padding: 4px 32px;
-      background-color: var.$white;
-      border-radius: 300px;
-      transform: translate(-50%, -50%);
-
-      &.is-Design {
-        color: var.$white;
-        background-color: var.$design;
-      }
-    }
-
     &Image {
       width: 267px;
       height: 200px;
@@ -104,25 +122,116 @@ body {
       font-size: 14px;
     }
   }
+
+  &__listItemWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background-color: var.$white;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+
+  &__listItemCategory {
+    position: absolute;
+    overflow: visible;
+    top: 0;
+    left: 40%;
+    padding: 4px 32px;
+    background-color: var.$white;
+    border-radius: 300px;
+    transform: translate(-50%, -50%);
+
+    &.is-Design {
+      color: var.$white;
+      background-color: var.$design;
+    }
+
+    &.is-Daily {
+      color: var.$white;
+      background-color: var.$daily;
+    }
+
+    &.is-Tech {
+      color: var.$white;
+      background-color: var.$tech;
+    }
+  }
 }
 
 .c-post {
   &__eyeCatch {
+    position: relative;
     height: 300px;
     width: 100%;
     border-radius: 0 0 0 100px;
     background-color: var.$textsub;
+    overflow: hidden;
 
-    &Category {
-      color: var.$bgcolor;
+    &-design {
+      background-color: var.$design;
+    }
+
+    &-tech {
+      background-color: var.$tech;
+    }
+
+    &-daily {
+      background-color: var.$daily;
     }
   }
 
-  &__title {
+  &__eyeCatchCategory {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    font-size: 10vh;
+    font-weight: bold;
+    color: var.$white;
+    transform: translateY(-88%);
+    pointer-events: none;
+  }
+
+  &__meta {
     padding: 0 4%;
   }
 
+  &__dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &__createdAt,
+  &__updatedAt {
+    position: relative;
+  }
+
+  &__createdAt {
+    &::before {
+      content: url("/icon/icon-pencil.svg");
+      position: absolute;
+      top: 60%;
+      left: -20px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__updatedAt {
+    margin-top: 8px;
+
+    &::before {
+      content: url("/icon/icon-refresh.svg");
+      position: absolute;
+      top: 60%;
+      left: -20px;
+      transform: translateY(-50%);
+    }
+  }
+
   &__contents {
+    margin-top: 40px;
     padding: 0 5%;
 
     a {

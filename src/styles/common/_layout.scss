@@ -1,3 +1,5 @@
+@use "../foundation/variables" as var;
+
 .l-mother {
   display: flex;
   flex-wrap: nowrap;
@@ -12,6 +14,14 @@
   width: 280px;
   padding-top: 100px;
   flex-shrink: 0;
+
+  @include var.mq(sp) {
+    position: fixed;
+    padding-top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .l-main {

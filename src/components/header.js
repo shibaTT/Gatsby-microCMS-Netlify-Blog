@@ -5,6 +5,14 @@ import TableOfContents from "./toc"
 
 const Header = ({ siteTitle, currentPage, blogInfo }) => (
   <header className="c-header l-header">
+    <div
+      className="c-header__hamburger"
+      onClick={() =>
+        document
+          .querySelector(".c-header__hamburger")
+          .classList.toggle("is-active")
+      }
+    ></div>
     <div className="c-header__contents">
       <div className="c-header__navigation">
         <div className="c-header__logo">{siteTitle}</div>

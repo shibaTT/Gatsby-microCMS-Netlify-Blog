@@ -1,12 +1,14 @@
 /* COLOR */
 $bgcolor: #efeeea;
 $bgsub: #f8f8f8;
+$bgsub2: #eddbd2;
 $white: #ffffff;
 $design: #f79824;
 $tech: #e13009;
 $daily: #48a9a6;
 $textmain: #39536e;
 $textsub: #99adc1;
+$textbrown: #77625c;
 
 /* media query */
 $breakpoints: (
@@ -17,7 +19,7 @@ $breakpoints: (
 ) !default;
 
 @mixin mq($breakpoint: tb) {
-    @media #{map-get($breakpoints, $breakpoint)} {
-        @content;
-    }
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
 }
