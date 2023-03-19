@@ -1,0 +1,25 @@
+/* @keyframe Animation */
+
+@keyframes expansion_circle {
+  0% {
+    width: 80px;
+    height: 80px;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes fadeIn_down {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

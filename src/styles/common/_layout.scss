@@ -15,7 +15,7 @@
   padding-top: 100px;
   flex-shrink: 0;
 
-  @include var.mq(sp) {
+  @include var.mq(md) {
     position: fixed;
     padding-top: 0;
     right: 0;
