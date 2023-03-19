@@ -11,9 +11,6 @@
 require("dotenv").config()
 
 module.exports = {
-  flags: {
-    DEV_SSR: true, // フォント読み込もうとしたらエラー出るので
-  },
   siteMetadata: {
     title: "To The First",
     description:

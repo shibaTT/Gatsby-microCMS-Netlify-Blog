@@ -21,7 +21,9 @@ const CategoryPage = ({ data }) => (
               {node.category.name}
             </div>
             <div className="c-main__listItemImage">
-              <img srcSet={node.eyecatch.url} alt={node.title} />
+              {node.eyecatch !== null && (
+                <img srcSet={node.eyecatch.url} alt={node.title} />
+              )}
             </div>
             <div className="c-main__listItemTitle">
               {node.title}
@@ -40,7 +42,10 @@ export default CategoryPage
 
 export const query = graphql`
   query ($categoriesId: String!) {
-    allMicrocmsBlogs(filter: { category: { id: { eq: $categoriesId } } }) {
+    allMicrocmsBlogs(
+      filter: { category: { id: { eq: $categoriesId } } }
+      sort: { createdAt: DESC }
+    ) {
       edges {
         node {
           title

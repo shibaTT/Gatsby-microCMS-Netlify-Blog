@@ -14,10 +14,12 @@ const BlogPage = ({ data }) => (
         <p className="c-post__eyeCatchCategory">
           {data.microcmsBlogs.eyecatch.url !== "" &&
             data.microcmsBlogs.category.name}
-          <img
-            srcSet={data.microcmsBlogs.eyecatch.url}
-            alt={data.microcmsBlogs.title}
-          />
+          {data.microcmsBlogs.eyecatch !== null && (
+            <img
+              srcSet={data.microcmsBlogs.eyecatch.url}
+              alt={data.microcmsBlogs.title}
+            />
+          )}
         </p>
       </div>
       <div className="c-post__meta">

@@ -21,7 +21,9 @@ const IndexPage = ({ data }) => (
               {node.category.name}
             </div>
             <div className="c-main__listItemImage">
-              <img srcSet={node.eyecatch.url} alt={node.title} />
+              {node?.eyecatch !== null && (
+                <img srcSet={node.eyecatch.url} alt={node.title} />
+              )}
             </div>
             <div className="c-main__listItemTitle">
               {node.title}
