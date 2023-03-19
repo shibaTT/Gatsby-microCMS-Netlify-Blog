@@ -12,7 +12,12 @@ const BlogPage = ({ data }) => (
         className={`c-post__eyeCatch c-post__eyeCatch-${data.microcmsBlogs.category.id}`}
       >
         <p className="c-post__eyeCatchCategory">
-          {data.microcmsBlogs.category.name}
+          {data.microcmsBlogs.eyecatch.url !== "" &&
+            data.microcmsBlogs.category.name}
+          <img
+            srcSet={data.microcmsBlogs.eyecatch.url}
+            alt={data.microcmsBlogs.title}
+          />
         </p>
       </div>
       <div className="c-post__meta">
@@ -24,7 +29,7 @@ const BlogPage = ({ data }) => (
         </div> */}
         <div className="c-post__dates">
           <p className="c-post__createdAt">{data.microcmsBlogs.createdAt}</p>
-          {data.microcmsBlogs.createdAt === data.microcmsBlogs.updatedAt && (
+          {data.microcmsBlogs.createdAt !== data.microcmsBlogs.updatedAt && (
             <p className="c-post__updatedAt">{data.microcmsBlogs.updatedAt}</p>
           )}
         </div>
@@ -52,6 +57,9 @@ export const query = graphql`
       category {
         name
         id
+      }
+      eyecatch {
+        url
       }
     }
   }
