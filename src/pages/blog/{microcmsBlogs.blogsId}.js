@@ -12,14 +12,18 @@ const BlogPage = ({ data }) => (
         className={`c-post__eyeCatch c-post__eyeCatch-${data.microcmsBlogs.category.id}`}
       >
         <p className="c-post__eyeCatchCategory">
-          {data.microcmsBlogs.eyecatch.url !== "" &&
-            data.microcmsBlogs.category.name}
-          {data.microcmsBlogs.eyecatch !== null && (
-            <img
-              srcSet={data.microcmsBlogs.eyecatch.url}
-              alt={data.microcmsBlogs.title}
-            />
-          )}
+          {(() => {
+            if (data.microcmsBlogs.eyecatch === null) {
+              return data.microcmsBlogs.category.name
+            } else {
+              return (
+                <img
+                  srcSet={data.microcmsBlogs.eyecatch.url}
+                  alt={data.microcmsBlogs.title}
+                />
+              )
+            }
+          })()}
         </p>
       </div>
       <div className="c-post__meta">

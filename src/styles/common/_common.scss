@@ -49,6 +49,8 @@ body {
   font-size: 2vw;
   font-weight: bold;
   text-align: right;
+  line-height: 1;
+  margin-bottom: 24px;
 
   @include var.mq(md) {
     font-size: 32px;
