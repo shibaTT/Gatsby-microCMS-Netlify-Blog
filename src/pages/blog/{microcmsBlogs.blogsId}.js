@@ -5,7 +5,7 @@ import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 
 const BlogPage = ({ data }) => (
-    <Layout currentPage="blog">
+    <Layout currentPage="blog" htmlString={data.microcmsBlogs.content}>
         <Seo title={data.microcmsBlogs.title} />
         <article className="c-post">
             <div

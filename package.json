@@ -22,6 +22,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "cheerio": "^1.0.0-rc.12",
     "prettier": "^2.7.1",
     "yarn": "^1.22.19"
   },
