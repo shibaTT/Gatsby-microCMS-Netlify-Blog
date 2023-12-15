@@ -9,8 +9,7 @@
 
 .c-tableOfContents {
     width: 100%;
-    height: 440px;
-    margin-top: 40px;
+    min-height: 300px;
     padding: 20px 28px;
     border-radius: 50px 0 0 50px;
     background-color: var.$white;
@@ -32,21 +31,20 @@
         background-color: transparent;
     }
 
-    &__title {
+    .c-tableOfContents__title {
         font-size: 18px;
         font-weight: bold;
         text-align: center;
     }
 
-    &__items {
+    .c-tableOfContents__items {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
         margin-top: 20px;
     }
 
-    &__item {
-        & + & {
-            margin-top: 8px;
-        }
-
+    .c-tableOfContents__item {
         &.is-h2 {
             &::before {
                 content: "●";
