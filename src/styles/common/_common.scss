@@ -314,17 +314,67 @@ body {
         }
 
         h2 {
-            margin: 32px 0 24px;
+            margin-top: 32px;
             padding-bottom: 4px;
             border-bottom: 1px solid var.$textsub;
         }
 
         h3,
         h4 {
-            margin: 32px 0 12px;
+            margin-top: 32px;
         }
 
-        p + p {
+        p {
+            margin-top: 24px;
+        }
+
+        ol {
+            list-style-type: decimal;
+            list-style-position: inside;
+
+            & > li {
+                list-style-type: decimal;
+                list-style-position: inside;
+                line-height: 2;
+
+                & > ol {
+                    margin-left: 24px;
+                }
+            }
+        }
+
+        ul > li {
+            line-height: 2;
+
+            &::before {
+                content: "-";
+                margin-right: 12px;
+            }
+
+            & > ul {
+                margin-left: 24px;
+            }
+        }
+
+        blockquote {
+            position: relative;
+            margin-top: 24px;
+            padding: 24px;
+            box-sizing: border-box;
+            font-style: italic;
+            background: var.$bgsub;
+            color: var.$textbrown;
+            border-left: 12px solid var.$bgsub2;
+            border-radius: 12px;
+        }
+
+        pre > code {
+            border-radius: 12px;
+        }
+
+        // 動画の埋め込み
+        .embedly-embed {
+            max-width: 100%;
             margin-top: 24px;
         }
     }
