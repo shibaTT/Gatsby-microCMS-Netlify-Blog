@@ -22,7 +22,7 @@ const BlogPage = ({ data: { microcmsBlogs, site } }) => {
                     className={`c-post__eyeCatch c-post__eyeCatch-${microcmsBlogs.category.id}`}
                 >
                     {(() => {
-                        console.log(microcmsBlogs)
+                        // console.log(microcmsBlogs)
                         if (microcmsBlogs.eyecatch === null) {
                             return (
                                 <p className="c-post__eyeCatchCategory">
