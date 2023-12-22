@@ -4,7 +4,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
 import { load } from "cheerio"
-import hljs from "highlight.js"
+import hljs from "highlight.js/lib/core"
 
 const BlogPage = ({ data: { microcmsBlogs, site } }) => {
     const formattedContent = load(microcmsBlogs.content)
