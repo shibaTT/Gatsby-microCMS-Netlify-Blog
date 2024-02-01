@@ -326,6 +326,15 @@ body {
 
         p {
             margin-top: 24px;
+
+            & > code {
+                box-sizing: border-box;
+                padding: 2px;
+                border: 1px solid var.$textsub;
+                border-radius: 4px;
+                background-color: var.$bgsub;
+                color: var.$textorange;
+            }
         }
 
         ol {

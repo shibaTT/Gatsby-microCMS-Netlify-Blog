@@ -9,17 +9,18 @@ $daily: #48a9a6;
 $textmain: #39536e;
 $textsub: #99adc1;
 $textbrown: #77625c;
+$textorange: #b85472;
 
 /* media query */
 $breakpoints: (
-  "sp": "screen and (max-width: 520px)",
-  "md": "screen and (max-width: 768px)",
-  "tb": "screen and (max-width: 960px)",
-  "pc": "screen and (min-width: 961px)",
+    "sp": "screen and (max-width: 520px)",
+    "md": "screen and (max-width: 768px)",
+    "tb": "screen and (max-width: 960px)",
+    "pc": "screen and (min-width: 961px)",
 ) !default;
 
 @mixin mq($breakpoint: tb) {
-  @media #{map-get($breakpoints, $breakpoint)} {
-    @content;
-  }
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
 }
