@@ -7,7 +7,7 @@
   "dependencies": {
     "@fontsource/m-plus-1": "^4.5.12",
     "@netlify/functions": "^2.4.1",
-    "gatsby": "^5.0.0",
+    "gatsby": "^5.13.6",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^3.0.0",
     "gatsby-plugin-manifest": "^5.0.0",
