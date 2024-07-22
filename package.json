@@ -6,7 +6,6 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@fontsource/m-plus-1": "^4.5.12",
-    "@netlify/functions": "^2.4.1",
     "gatsby": "^5.0.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-image": "^3.0.0",
@@ -24,6 +23,7 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@netlify/functions": "^2.4.1",
     "cheerio": "^1.0.0-rc.12",
     "prettier": "^2.7.1",
     "sass": "^1.69.5",
@@ -49,5 +49,9 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "volta": {
+    "node": "20.15.1",
+    "yarn": "4.3.1"
   }
 }
