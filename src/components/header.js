@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-import TableOfContents from "./toc"
+import TableOfContents from "./TableOfContents"
 
 const Header = ({ siteTitle, currentPage, htmlString }) => (
     <header className="c-header l-header">
