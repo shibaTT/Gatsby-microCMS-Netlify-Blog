@@ -7,39 +7,43 @@ import moment from "moment"
 
 const CategoryPage = ({ data }) => (
     <Layout currentPage={data.microcmsCategories.categoriesId}>
-        <Seo title="Home"></Seo>
-        <ul className="c-main__list">
-            {data.allMicrocmsBlogs.edges.map(({ node }) => (
-                <li key={node.blogsId} className="c-main__listItem">
-                    <Link
-                        to={`/blog/${node.blogsId}`}
-                        className="c-main__listItemWrapper"
-                    >
-                        <div
-                            className={`c-main__listItemCategory is-${node.category.name}`}
+        <Seo title="Home" />
+        {data.allMicrocmsBlogs.edges?.length > 0 ? (
+            <ul className="c-main__list">
+                {data.allMicrocmsBlogs.edges.map(({ node }) => (
+                    <li key={node.blogsId} className="c-main__listItem">
+                        <Link
+                            to={`/blog/${node.blogsId}`}
+                            className="c-main__listItemWrapper"
                         >
-                            {node.category.name}
-                        </div>
-                        <div className="c-main__listItemImage">
-                            {node.eyecatch !== null && (
-                                <img
-                                    srcSet={node.eyecatch.url}
-                                    alt={node.title}
-                                />
-                            )}
-                        </div>
-                        <div className="c-main__listItemTitle">
-                            {node.title}
-                            <span className="c-main__listItemDate">
-                                {moment(node.createdAt).format(
-                                    "YYYY年MM月DD日"
+                            <div
+                                className={`c-main__listItemCategory is-${node.category.name}`}
+                            >
+                                {node.category.name}
+                            </div>
+                            <div className="c-main__listItemImage">
+                                {node.eyecatch !== null && (
+                                    <img
+                                        srcSet={node.eyecatch.url}
+                                        alt={node.title}
+                                    />
                                 )}
-                            </span>
-                        </div>
-                    </Link>
-                </li>
-            ))}
-        </ul>
+                            </div>
+                            <div className="c-main__listItemTitle">
+                                {node.title}
+                                <span className="c-main__listItemDate">
+                                    {moment(node.createdAt).format(
+                                        "YYYY年MM月DD日"
+                                    )}
+                                </span>
+                            </div>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        ) : (
+            <p>このカテゴリーには記事がありません</p>
+        )}
     </Layout>
 )
 
