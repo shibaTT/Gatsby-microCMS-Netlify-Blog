@@ -1,8 +1,8 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
+import Layout from "@/components/layout"
+import Seo from "@/components/seo"
 import { load } from "cheerio"
 import hljs from "highlight.js/lib/core"
 
