@@ -20,6 +20,7 @@ const TableOfContents = ({ htmlString }) => {
                     ? toc.map(toc => (
                           <li
                               className={`c-tableOfContents__item is-${toc.name}`}
+                              key={toc.id}
                           >
                               <AnchorLink
                                   href={`#${toc.id}`}
