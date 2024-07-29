@@ -306,6 +306,7 @@ body {
     .c-post__contents {
         margin-top: 40px;
         padding: 0 5%;
+        word-break: break-all;
 
         a {
             text-decoration: underline;
