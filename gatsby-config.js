@@ -8,7 +8,10 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 
-require("dotenv").config()
+// エラーが出たら `.env.local` じゃなくて `.env.development` に名前を変更して下さい
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV || "development"}`,
+})
 
 module.exports = {
     siteMetadata: {
