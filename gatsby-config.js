@@ -26,7 +26,7 @@ module.exports = {
             resolve: "gatsby-source-microcms",
             options: {
                 apiKey: process.env.API_KEY,
-                serviceId: "ecup",
+                serviceId: process.env.SERVICE_DOMAIN,
                 apis: [
                     {
                         endpoint: "blogs",
