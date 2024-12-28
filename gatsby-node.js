@@ -7,15 +7,42 @@
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-exports.createPages = async ({ actions }) => {
-    const { createPage } = actions
-    createPage({
-        path: "/using-dsg",
-        component: require.resolve("./src/templates/using-dsg.js"),
-        context: {},
-        defer: true,
-    })
-}
+// exports.createPages = async ({ actions }) => {
+//     const { createPage } = actions
+//     const result = await graphql(`
+//         {
+//             allMicrocmsBlogs {
+//                 edges {
+//                     node {
+//                         id
+//                         title
+//                         content
+//                         eyecatch {
+//                             url
+//                         }
+//                         publishedAt
+//                         categories {
+//                             name
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     `)
+
+//     if (result.errors) {
+//         throw result.errors
+//     }
+
+//     result.data.allMicrocmsBlog.edges.forEach(({ node }) => {
+//         createPage({
+//             path: `/blog/${node.slug}`,
+//             context: {
+//                 id: node.id,
+//             },
+//         })
+//     })
+// }
 
 /**
  * Scheme Definition
